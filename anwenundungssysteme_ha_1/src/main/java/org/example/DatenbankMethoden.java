@@ -38,6 +38,18 @@ public class DatenbankMethoden {
         produkte.add(new Produkt(name, beschreibung, preis, lagerbestand, lagereinheit, lagerort));
         System.out.println("Produkt erfolgreich hinzugefügt!");
     }
+    // 
+    public Produkt findProduktByName(String name) {
+        // Durchsuchen Sie die Liste 'produkte' nach dem Produkt mit dem angegebenen Namen
+        for (Produkt produkt : produkte) {
+            if (produkt.getName().equalsIgnoreCase(name)) {
+                return produkt; // Produkt gefunden, zurückgeben
+            }
+        }
+
+        // Produkt nicht gefunden, null zurückgeben
+        return null;
+    }
 
     // Methode zum Bearbeiten eines Produkts
     public static void produktBearbeiten() {
@@ -113,4 +125,7 @@ public class DatenbankMethoden {
         if (ergebnisse.isEmpty()) {
             System.out.println("Keine Produkte gefunden.");
         } else {
-            System.out
+            System.out.println("Produkt Gefunden")
+        }
+    }
+}
